@@ -3,7 +3,8 @@
 /**
  * hash_table_print - prints a hash table
  * @ht: pointer to hash table
- * Prints the key/value in the order that they appear in the array of hash table
+ * Prints the key/value in the order that they appear in
+ * the array of hash table
  * If ht is NULL, don’t print anything
  * format : {'key': 'value',...}
  **/

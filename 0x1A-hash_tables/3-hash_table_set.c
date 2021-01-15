@@ -4,6 +4,7 @@
  * hash_table_set - function that adds an element to the hash table
  * @ht: hash table you want to add or update the key/value to
  * @key:the key. key can not be an empty string
+ * @value: value
  * Return: 1 if it succeeded, 0 otherwise
  */
 
@@ -15,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	if(ht->array[index])
+	if (ht->array[index])
 	{
 		current = ht->array[index];
 		while (current)
@@ -26,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				current->value = (char *) strdup(value);
 				return (1);
 			}
-			current = current ->next;
+			current = current->next;
 		}
 	}
 	node = malloc(sizeof(hash_node_t));
